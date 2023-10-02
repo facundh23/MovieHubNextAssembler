@@ -8,12 +8,14 @@
     "react-dom": "latest",
     "react-hook-form": "^7.46.2",
     "react-icons": "^4.11.0",
+    "react-modal": "^3.16.1",
     "sweetalert2": "^11.7.31"
   },
   "devDependencies": {
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/react-modal": "^3.16.1",
     "autoprefixer": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",

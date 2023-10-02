@@ -1,8 +1,9 @@
 'use client';
 
-import { usePathname } from 'next/navigation'
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from 'react';
+import Modal from '../Modal/Modal';
 
 
 const routes = [
@@ -21,7 +22,7 @@ const routes = [
 ]
 
 const Navbar = () => {
-    const pathName = usePathname()
+
 
     return (
         <>
@@ -47,10 +48,13 @@ const Navbar = () => {
                         }
 
                     </ul>
+
                     <div className="hidden md:hidden lg:block">
                         <span>User Name | </span>
                         <span>Image</span>
+
                     </div>
+
 
                 </nav>
 

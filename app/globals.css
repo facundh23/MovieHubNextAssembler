@@ -16,7 +16,10 @@
     .galery-item{
         @apply hover:!scale-90 transition duration-1000 rounded overflow-hidden cursor-pointer 
     }
+    
 }
+
+
 
 @layer utilities{
     .clip-circle-0{
