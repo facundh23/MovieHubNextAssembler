@@ -16,9 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-black'>
-        <div className='w-[90%] mx-auto max-w-screen-lg h-full'>
-          <Navbar />
+      <body className='bg-slate-400 bg-hero-shadow-img'>
+        <div className='w-[100%] mx-auto max-w-screen-lg h-[90%]'>
+          {/* <Navbar /> */}
           {children}
           <Footer />
         </div>

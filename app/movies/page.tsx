@@ -1,11 +1,16 @@
-import React from 'react'
+import Card from '@/components/Card/Card'
+import Image from 'next/image'
+
 
 // type Props = {}
 
 const MoviesPage = () => {
     return (
-        <main>
-            <h1>Movies</h1>
+        <main className='galery-container'>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
         </main>
     )
 }

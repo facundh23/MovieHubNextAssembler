@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar/Navbar'
 import React from 'react'
 
 
@@ -7,10 +8,12 @@ type Props = {
 
 function layout({ children }: Props) {
     return (
-        <div className='bg-red-500 h-screen flex items-center flex-col w-[100%] justify-start'>
-            Layout De Movies
-            {children}
-        </div>
+        <>
+            <Navbar />
+            <div className='bg-red-500  flex items-center flex-col w-[100%] justify-start'>
+                {children}
+            </div>
+        </>
     )
 }
 

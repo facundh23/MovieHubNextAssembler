@@ -8,6 +8,16 @@
     }
 }
 
+@layer components {
+    .galery-container{
+        @apply columns-1 sm:columns-2 md:columns-2 lg:columns-4 space-y-3 p-2
+    }
+
+    .galery-item{
+        @apply hover:!scale-90 transition duration-1000 rounded overflow-hidden cursor-pointer 
+    }
+}
+
 @layer utilities{
     .clip-circle-0{
         clip-path: circle(0% at top right);

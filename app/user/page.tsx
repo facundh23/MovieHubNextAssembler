@@ -1,11 +1,12 @@
+import Navbar from '@/components/Navbar/Navbar'
 import React from 'react'
 
 // type Props = {}
 
 const UserPage = () => {
     return (
-        <main className=''>
-            <h1>Users</h1>
+        <main>
+            <h1>User Name</h1>
         </main>
     )
 }

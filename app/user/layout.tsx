@@ -1,11 +1,14 @@
+import Navbar from "@/components/Navbar/Navbar";
+
 type Props = {
     children: React.ReactNode
 };
 
 const UserLayout = ({ children }: Props) => {
     return (
-        <div className="h-screen bg-blue-500">
-            <h1>User Page</h1>
+        <div className="h-full bg-blue-500 rounded">
+
+            <Navbar />
             {children}
         </div>
     )

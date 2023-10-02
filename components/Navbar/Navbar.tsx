@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { usePathname } from 'next/navigation'
 import Link from "next/link";
 import Image from "next/image";
 
@@ -21,7 +21,7 @@ const routes = [
 ]
 
 const Navbar = () => {
-
+    const pathName = usePathname()
 
     return (
         <>
