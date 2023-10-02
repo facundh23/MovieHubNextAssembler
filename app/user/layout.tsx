@@ -7,3 +7,4 @@ const UserLayout = ({ children }: Props) => {
         <div>{children}</div>
     )
 }
+export default UserLayout

@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
+import Footer from '@/components/Footer/Footer'
 
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({
         <div className='w-[90%] overflow-hidden mx-auto max-w-screen-lg'>
           <Navbar />
           {children}
+          <Footer />
         </div>
       </body>
     </html>
