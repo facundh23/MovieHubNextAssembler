@@ -4,7 +4,7 @@ import React from 'react'
 
 const UserPage = () => {
     return (
-        <main>
+        <main className=''>
             <h1>Users</h1>
         </main>
     )

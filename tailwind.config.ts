@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         "menu-color": "#172554",
+        "nav-color": "#525252",
       },
       backgroundImage: {
         "open-menu": 'url("/assets/icons/menu.svg")',

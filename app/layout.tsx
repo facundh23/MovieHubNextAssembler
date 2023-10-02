@@ -16,8 +16,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-gray-400'>
-        <div className='w-[90%] overflow-hidden mx-auto max-w-screen-lg'>
+      <body className='bg-black'>
+        <div className='w-[90%] mx-auto max-w-screen-lg h-full'>
           <Navbar />
           {children}
           <Footer />

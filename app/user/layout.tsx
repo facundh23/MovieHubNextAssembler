@@ -4,7 +4,10 @@ type Props = {
 
 const UserLayout = ({ children }: Props) => {
     return (
-        <div>{children}</div>
+        <div className="h-screen bg-blue-500">
+            <h1>User Page</h1>
+            {children}
+        </div>
     )
 }
 export default UserLayout
