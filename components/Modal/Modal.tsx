@@ -1,32 +1,17 @@
 'use client'
-
 import Link from 'next/link';
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Modal from 'react-modal';
 import Swal from 'sweetalert2';
 
-type Props = {
-    searchParams: Record<string, string> | null | undefined
-}
 
 
-const MoviesModal = ({ searchParams }: Props) => {
+
+const MoviesModal = () => {
 
     const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm();
 
-    // const { isAuthenticated, getAccessTokenSilently } = useAuth0();
-    // const navigate = useNavigate();
-    // const { userId } = useParams();
     // const { VITE_API_URL: url } = import.meta.env
-    // const movieUrl = `${url}/home/movies/${userId}`
     // const { genres } = useGenres();  
-
-
-
-
-
-
 
     const onSubmit = async () => {
         // console.log(data)
@@ -50,7 +35,7 @@ const MoviesModal = ({ searchParams }: Props) => {
         })
 
         setTimeout(() => {
-            setModalIsOpen(false)
+
             reset();
         }, 3000)
 
@@ -59,16 +44,9 @@ const MoviesModal = ({ searchParams }: Props) => {
 
 
     return (
-
-
         <>
-
-
-
-
-            <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center">
-
-                <form className='w-[80%] h-1/2 mx-auto border-x-violet-500 border-y-black border-4 flex flex-col p-5 mt-[10%] gap-2 md:w-[80%] md:mx-auto transition-all duration-500' onSubmit={onSubmit}>
+            <div className="w-[100%] fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center lg:w-[50%] lg:mx-auto lg:h-[70%] lg:mt-11 z-40">
+                <form className='w-[70%] h-1/2 mx-auto border-x-cyan-500 border-y-black border-4 flex flex-col p-5 mt-[10%] gap-2 md:w-[80%] md:mx-auto transition-all duration-500' onSubmit={onSubmit}>
                     <h5 className='text-center mb-2 text-white font-bold'>Upload Your Movie</h5>
                     <input placeholder='Movie Title' className='mb-4 p-2 rounded-md border-2 border-black ' {...register("title", {
                         required: {
@@ -144,23 +122,16 @@ const MoviesModal = ({ searchParams }: Props) => {
 
                     {errors.files && <p className='text-red-500 block'>{errors?.files?.message?.toString()}</p>}
 
-                    <button className='bg-violet-600 text-white mb-2 w-36 self-center p-1 rounded-md hover:bg-violet-800 transition-all duration-700' type='submit' disabled={false}>
+                    <button className='bg-cyan-600 text-white mb-2 w-36 self-center p-1 rounded-md hover:bg-cyan-800 transition-all duration-700 font-bold' type='submit' disabled={false}>
                         Upload
                     </button>
-                    <Link className='bg-red-500 p-2 w-[20%] text-center mx-auto absolute top-10' href={"/movies"}>
+                    <Link className='bg-red-500 p-2 w-[20%] text-center mx-auto absolute top-10 font-bold rounded-md' href={"/user"}>
                         Close Modal
                     </Link>
 
                 </form >
-
-
             </div>
-
-
         </>
-
-
-
 
     )
 }

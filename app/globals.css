@@ -10,7 +10,7 @@
 
 @layer components {
     .galery-container{
-        @apply columns-1 sm:columns-2 md:columns-2 lg:columns-4 space-y-3 p-2
+        @apply columns-1 sm:columns-2 md:columns-2 lg:columns-4 p-2
     }
 
     .galery-item{

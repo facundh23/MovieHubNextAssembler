@@ -6,7 +6,7 @@ type Props = {
 
 const UserLayout = ({ children }: Props) => {
     return (
-        <div className="h-full bg-blue-500 rounded">
+        <div className="h-full bg-transparent rounded">
 
             <Navbar />
             {children}

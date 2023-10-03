@@ -4,7 +4,7 @@ type Props = {}
 
 const CardList = (props: Props) => {
     return (
-        <div>CardList</div>
+        <div className='text-black dark:text-white'>CardList</div>
     )
 }
 

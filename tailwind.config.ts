@@ -7,16 +7,18 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./public/assets/**/*.{svg}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
         "menu-color": "#172554",
-        "nav-color": "#14532D",
       },
       backgroundImage: {
         "open-menu": 'url("/assets/icons/menu.svg")',
         "close-menu": 'url("/assets/icons/close.svg")',
         "hero-img": 'url("/assets/images/hero2.jpg")',
+        "cine-img": 'url("/assets/images/ticket.jpg")',
+        "cupon-img": 'url("/assets/images/cupon2.png")',
       },
       backgroundColor: {
         "hero-shadow-img": "rgba(0, 0, 0, 0.6)",

@@ -9,18 +9,18 @@ const Footer = () => {
         <footer className=" py-2 w-[100%] flex items-center justify-center text-center">
             <div className="flex items-center flex-col justify-center">
                 <section>
-                    <h2 className='font-bold text-3xl'>Movie Hub</h2>
-                    <p className="text-2xl text-gray-color">&copy; Assembler Ait 2023</p>
+                    <h2 className='font-bold text-3xl text-black  dark:text-white'>Movie Hub</h2>
+                    <p className="text-2xl  text-black  dark:text-white">&copy; Assembler Ait 2023</p>
                 </section>
 
                 <section>
 
                     <div className='flex justify-center items-center gap-2 text-white text-4xl md:flex lg:justify-center md:items-center md:justify-center'>
-                        <Link href="https://github.com/facundh23">
+                        <Link href="https://github.com/facundh23" className="text-black dark:bg-black dark:text-white">
                             <i className='bx bxl-github bg-white'></i>
                             <AiFillGithub />
                         </Link>
-                        <Link href="https://www.linkedin.com/in/facundo-herrera-fullstack-developer/">
+                        <Link href="https://www.linkedin.com/in/facundo-herrera-fullstack-developer/" className="text-black dark:bg-black dark:text-white">
                             <BiLogoLinkedinSquare />
                         </Link>
                     </div>

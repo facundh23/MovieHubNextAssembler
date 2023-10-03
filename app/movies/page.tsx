@@ -15,7 +15,7 @@ const MoviesPage = ({ searchParams }: Props) => {
 
     return (
         <main className='galery-container'>
-            <Link className='absolute top-5 left-5 bg-cyan-300 p-2 rounded-md' href={"/movies/?modal=true"}>
+            <Link className='hidden w-[20%] text-center absolute top-6 left-2 bg-blue-500 p-2 rounded-md font-bold md:top-9 lg:hidden transition duration-700 hover:bg-blue-800 sm:hidden' href={"/movies/?modal=true"}>
                 Open Modal
             </Link>
             {showModal && <Modal />}
