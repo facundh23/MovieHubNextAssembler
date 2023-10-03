@@ -1,3 +1,5 @@
+import UserPage from "../page"
+
 type Props = {
     params: {
         userId: string
@@ -9,7 +11,8 @@ type Props = {
 const UserProfile = (props: Props) => {
     return (
         <main>
-            <h1>Profile Page</h1>
+            <h1 className="text-center mt-5 text-2xl">Profile Page</h1>
+            <UserPage />
         </main>
     )
 }

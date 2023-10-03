@@ -25,7 +25,7 @@ const Navbar = () => {
         <>
 
             <header>
-                <nav className=' w-[100%]  font-bold flex justify-end items-center gap-5 h-28 px-2 bg-cyan-300 rounded-md md:justify-between sm:justify-between dark:bg-blue-800 '>
+                <nav className=' w-[100%]  font-bold flex justify-end items-center mt-10 gap-5 h-28 px-2 bg-cyan-300 rounded-md md:justify-between sm:justify-between dark:bg-blue-800 '>
                     <input type="text" placeholder="Search Your Movie" className="hidden md:block md:p-3" />
 
 
