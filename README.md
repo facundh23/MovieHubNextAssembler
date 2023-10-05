@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Movie Next  - TS Individual Project Assembler :computer:
 
-## Getting Started
+## This is the first indivual project that we had to develop in the Advanced Module at Assembler Institute of Technology.:zap:
 
-First, run the development server:
+### We developed the project using the following technologies. :open_file_folder:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+:rocket: HTML 
+:art: TAILWINDCSS 
+:rocket: JAVASCRIPT 
+:rocket: TYPESCRIPT 
+:rocket: NEXT JS
+:brain: NODE JS 
+:brain: EXPRESS JS 
+:floppy_disk: MOONGOSE 
+:floppy_disk: PRISMA 
+:floppy_disk: MONGO DB 
+:floppy_disk: POSTGRESQL 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Libraries installed
+## NEXT
+ 1) ```npx create-next-app@latest```
+ 2) ```npm install```
+ 3) ```npm run dev```
+    
+## TAILWLINDCSS
+1) Install in your project
+npm install -D tailwindcss postcss autoprefixer
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2) Install tailwindcss and its peer 
+dependencies via npm, and then run 
+the init command to generate both 
+tailwind.config.js and postcss.config.js.
+"npx tailwindcss init -p"
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3) Configure your template paths.
+Add the paths to all of your template 
+files in your tailwind.config.js file.
 
-## Learn More
+"module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}"
 
-To learn more about Next.js, take a look at the following resources:
+4) Add the Tailwind directives to your CSS
+Add the @tailwind directives for each of Tailwind’s 
+layers to your ./src/index.css file.
+"@tailwind base;"
+"@tailwind components;"
+"@tailwind utilities;"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Backend
+1) ```npm i -D typescript nodemon @ types/node rimraf express @types/express dotenv ts-node```
+2) ```npm i morgan npm i --save-dev @types/morgan```
+3) ```npm i mongoose @types/mongoose```
+4) ```npm install prisma --save-dev```
+5)  Inicializar Prisma : ```npx prisma init```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Initialize project and start up server in frontend and backend
+```npm run dev``` :globe_with_meridians:
 
-## Deploy on Vercel
+### The project is based on the idea of a movie blog to which the user can create their own movies and give them a rating. The user authentication was developed with atuh0. 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Folder structure
+## FrontEnd
+![image](https://github.com/facundh23/MovieHubNextAssembler/assets/90207514/6f46b524-37cc-4272-b905-f0e0efac89d4)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### Bellow are images of the project 📷:arrow_down:
+
+### Web
+## LandingPage :arrow_right:  ![image](https://github.com/facundh23/MovieHubNextAssembler/assets/90207514/796e45a5-5832-47b7-9f2e-309e7e9fa283)
+
+
+
+
+
+
+
+Author :black_nib:
+Facundo Herrera
