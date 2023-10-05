@@ -1,31 +1,32 @@
 'use client'
-import { createMovie } from '@/actions/movies.actions';
+
 import { Movie } from '@/models/movies';
-import { getAllGenres } from '@/services/genre.services';
+import { createMovie } from '@/services/movie.services';
 import Link from 'next/link';
-import { ChangeEvent } from 'react';
+import { useRouter } from 'next/navigation';
+import { ChangeEvent, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
-import { redirect } from 'next/navigation'
-import { revalidateTag } from 'next/cache'
-
-
-
-
 
 
 const MoviesModal = ({ user, genres }) => {
+    const router = useRouter()
+    const { register, handleSubmit, formState: { errors }, setValue } = useForm();
+    const currentEmail = (user.email);
 
-    const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm();
 
     const onSubmit = async (data: Movie) => {
-        console.log(data)
-        createMovie(`http://localhost:8081/home/movies/${user.email}`, data)
+
+
+        createMovie(`http://localhost:8081/home/movies/${currentEmail}`, data)
+        router.refresh()
+
+
         const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 3000,
+            timer: 1500,
             timerProgressBar: true,
             didOpen: (toast) => {
                 toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -38,12 +39,6 @@ const MoviesModal = ({ user, genres }) => {
             title: 'Upload in successfully'
         })
 
-        revalidateTag('movies')
-        redirect("/movies")
-        // setTimeout(() => {
-
-        //     reset();
-        // }, 3000)
 
     }
 
@@ -136,9 +131,7 @@ const MoviesModal = ({ user, genres }) => {
 
                     {errors.genres && <p className='text-red-500 font-bold'>{errors?.genre?.message?.toString()}</p>}
 
-                    <input type='file' className='mb-2 mt-6 py-1 rounded-md' onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                        setValue('poster_image', e.target.files && e.target!.files[0])
-                    }} />
+                    <input type='file' className='mb-2 mt-6 py-1 rounded-md' {...register("poster_image")} />
 
                     {errors.files && <p className='text-red-500 block'>{errors?.files?.message?.toString()}</p>}
 

@@ -4,7 +4,7 @@ export interface Movie {
   year: number | Blob;
   score: number | Blob;
   sinopsis: string;
-  poster_image: string;
+  poster_image: FileList[];
   updatedAt: string;
   moviesId: string;
   genres: Genre[] | Blob;

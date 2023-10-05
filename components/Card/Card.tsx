@@ -45,13 +45,19 @@ const Card = async ({ movie, searchParams }: Props) => {
     const scoreStar = stars(movie.score);
 
 
-    const handleDelete = (id: string) => {
-        deleteMovieById(id)
+    const handleDelete = async (id: string) => {
+
+
+        await deleteMovieById(id)
+        router.refresh();
+        router.push("/movies")
+
+
         const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 3000,
+            timer: 1500,
             timerProgressBar: true,
             didOpen: (toast) => {
                 toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -64,10 +70,8 @@ const Card = async ({ movie, searchParams }: Props) => {
             title: 'Deleted successfully'
         })
 
-        setTimeout(() => {
-            router.refresh();
-            router.push("/movies")
-        }, 3000)
+
+
     }
     return (
         <div className="w-[100%] h-[70%]  sm:w-[100%] rounded overflow-hidden md:w-[100%] p-4 lg:w-[100%] text-center font-bold shadow-2xl hover:scale-90 transition duration-700 hover:cursor-pointer hover:bg-gray-400">
