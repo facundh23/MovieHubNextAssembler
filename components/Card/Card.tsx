@@ -1,8 +1,6 @@
 'use client'
 import { Movie } from '@/models/movies'
 import { deleteMovieById } from '@/actions/movies.actions'
-import { revalidateTag } from 'next/cache'
-import { redirect } from 'next/dist/server/api-utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'

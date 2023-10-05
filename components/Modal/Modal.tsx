@@ -1,5 +1,4 @@
 'use client'
-
 import { Movie } from '@/models/movies';
 import { createMovie } from '@/services/movie.services';
 import Link from 'next/link';
