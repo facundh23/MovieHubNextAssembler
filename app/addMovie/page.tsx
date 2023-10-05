@@ -1,27 +1,22 @@
 'use client'
-import { createMovie } from '@/actions/movies.actions';
-import { Movie } from '@/models/movies';
-import { getAllGenres } from '@/services/genre.services';
-import Link from 'next/link';
-import { ChangeEvent } from 'react';
-import { useForm } from 'react-hook-form';
-import Swal from 'sweetalert2';
+
 import Modal from '@/components/Modal/Modal';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import { getAllGenres } from '../../services/genre.services';
 
 
 
 
-const AddMovieModal = async () => {
-
-
-
+const MoviesModal = async () => {
+    const {user} = useUser();
+    const genres = await getAllGenres();
+    
     return (
         <>
-           
-            <Modal />
+           <Modal user={user} genres={genres}/>
         </>
 
     )
 }
 
-export default AddMovieModal
+export default MoviesModal

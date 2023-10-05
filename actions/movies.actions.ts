@@ -1,7 +1,6 @@
 import { Movie } from "@/models/movies";
 
-export const createMovie = async (data: Movie) => {
-  console.log(data);
+export const createMovie = async (url, data: Movie) => {
   try {
     const formData = new FormData();
     formData.append("title", data.title);
@@ -10,7 +9,7 @@ export const createMovie = async (data: Movie) => {
     formData.append("score", data.score);
     formData.append("poster_image", data.poster_image);
     formData.append("genres", data.genres);
-    await fetch("http://localhost:8081/home/movies", {
+    const response = await fetch(url, {
       method: "POST",
       body: formData,
     });

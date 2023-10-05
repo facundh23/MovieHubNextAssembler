@@ -1,12 +1,26 @@
-const MoviesModal = async () => {
+'use client'
+import { createMovie } from '@/actions/movies.actions';
+import { Movie } from '@/models/movies';
+import { getAllGenres } from '@/services/genre.services';
+import Link from 'next/link';
+import { ChangeEvent } from 'react';
+import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
+import { redirect } from 'next/navigation'
+import { revalidateTag } from 'next/cache'
+
+
+
+
+
+
+const MoviesModal = ({ user, genres }) => {
 
     const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm();
-    const genres = await getAllGenres();
 
-
-    const onSubmit = async (url, data: Movie) => {
+    const onSubmit = async (data: Movie) => {
         console.log(data)
-        createMovie("http://localhost:8081/home/movies", data)
+        createMovie(`http://localhost:8081/home/movies/${user.email}`, data)
         const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
@@ -24,6 +38,8 @@ const MoviesModal = async () => {
             title: 'Upload in successfully'
         })
 
+        revalidateTag('movies')
+        redirect("/movies")
         // setTimeout(() => {
 
         //     reset();

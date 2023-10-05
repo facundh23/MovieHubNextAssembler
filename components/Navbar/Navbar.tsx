@@ -76,7 +76,7 @@ const Navbar = async ({ searchParams }: Props) => {
                 </nav>
 
 
-                {showModal && <MoviesModal />}
+                
             </header >
         </>
 
