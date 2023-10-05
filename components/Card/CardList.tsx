@@ -1,10 +1,22 @@
+import { Movie } from '@/models/movies'
 import React from 'react'
+import Modal from '@/components/Modal/Modal'
+import Card from './Card'
+import EditModal from '../Modal/EditModal'
 
-type Props = {}
+type Props = {
+    movies: Movie[]
+}
 
-const CardList = (props: Props) => {
+
+const CardList = ({ movies }: Props) => {
+
     return (
-        <div className='text-black dark:text-white'>CardList</div>
+        <div >
+            {movies.map((movie) => {
+                return <Card movie={movie} />
+            })}
+        </div>
     )
 }
 

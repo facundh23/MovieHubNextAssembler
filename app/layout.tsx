@@ -2,8 +2,10 @@ import type { Metadata } from 'next'
 
 import Footer from '@/components/Footer/Footer'
 import './globals.css'
-import Providers from './providers'
-import ThemeBtn from '@/components/ThemeBtn/ThemeBtn'
+
+
+import { UserProvider } from '@auth0/nextjs-auth0/client'
+import AuthProvider from '@/components/AuthProvider/AuthProvider'
 
 
 
@@ -19,14 +21,14 @@ export default function RootLayout({ children,
 }) {
 
   return (
-    <html lang="en">
-      <body className='w-[100%] mx-auto max-w-screen-lg h-[90%]'>
-        <Providers>
-          <ThemeBtn />
-          {children}
+    <html lang="en" >
+      <body className='w-[90%] mx-auto max-w-screen-lg h-[90%]'>
+        <UserProvider>
+          <AuthProvider>
+            {children}
+          </AuthProvider>
           <Footer />
-        </Providers>
-
+        </UserProvider>
 
       </body>
     </html>

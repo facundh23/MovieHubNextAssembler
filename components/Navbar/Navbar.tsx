@@ -1,32 +1,52 @@
-'use client';
+
 import Link from "next/link";
 import Image from "next/image";
+import { getSession } from "@auth0/nextjs-auth0";
+import MoviesModal from "../Modal/Modal";
+
 
 
 
 const routes = [
 
     {
-        name: "User",
+        name: "Profile",
         path: "/user"
     },
     {
         name: "Movies",
         path: "/movies"
     },
+    {
+        name: "Add Movie",
+        path: "/addMovie"
+    },
+
 ]
 
 
+type Props = {
+    searchParams?: Record<string, string> | null | undefined,
+}
 
-const Navbar = () => {
+
+const Navbar = async ({ searchParams }: Props) => {
+    const showModal = searchParams?.modal;
+
+    const session = await getSession()
+    let user
+    if (session) {
+        user = session.user;
+    }
+
 
 
     return (
         <>
 
             <header>
-                <nav className=' w-[100%]  font-bold flex justify-end items-center mt-10 gap-5 h-28 px-2 bg-cyan-300 rounded-md md:justify-between sm:justify-between dark:bg-blue-800 '>
-                    <input type="text" placeholder="Search Your Movie" className="hidden md:block md:p-3" />
+                <nav className=' w-[100%] flex font-bold justify-center items-center px-2 gap-5 h-28  bg-cyan-300 rounded-md md:justify-between sm:justify-between dark:bg-blue-800 '>
+
 
 
                     <input type="checkbox" id='menu' className='peer/menu hidden' />
@@ -37,28 +57,27 @@ const Navbar = () => {
                             routes.map((route, i) => {
                                 return (
                                     <li key={i}>
-                                        <Link className="hover:bg-slate-500 hover:cursor-pointer transition duration-700 p-1 rounded-md" href={route.path}>{route.name}</Link>
+                                        <Link className="bg-green-400 p-2 hover:bg-slate-500 hover:cursor-pointer transition duration-700  rounded-md" href={route.path}>{route.name}</Link>
                                     </li>
                                 )
                             })
                         }
 
                     </ul>
+                    <a className="bg-red-400 p-2 rounded-md" href="/api/auth/logout">Logout</a>
+                    <input type="text" placeholder="Search Your Movie" className="hidden md:block md:p-3 w-[30%]" />
 
 
-                    <Link className=' bg-green-500 text-center w-[25%] p-2 font-bold rounded-full  sm:w-[20%] md:w-[15%] hover:bg-green-800 hover:cursor-pointer transition duration-700' href={"/user/?modal=true"}>
-                        Add Movie
-                    </Link>
-                    <button className="bg-red-500 w-[25%] p-2 rounded-full  hover:bg-red-800 hover:cursor-pointer transition duration-700 md:w-[12%]">Logout</button>
-                    <Image src={'/assets/images/cinema3.jpg'} width={40} height={40} className="hidden w-full rounded-full object-cover sm:hidden md:block md:w-[10%] md:h-[60%] md:rounded-full  " alt={"Movie Logo Img"} />
+                    {/* <button className="bg-red-500 w-[25%] p-2 rounded-full  hover:bg-red-800 hover:cursor-pointer transition duration-700 md:w-[12%]">Logout</button> */}
+                    <Image src={user?.picture} width={100} height={40} className="hidden w-full rounded-full object-cover object-center sm:hidden md:block md:w-[10%] md:h-[60%] md:rounded-full  " alt={"Movie Logo Img"} />
 
 
 
                 </nav>
 
 
-
-            </header>
+                {showModal && <MoviesModal />}
+            </header >
         </>
 
     )

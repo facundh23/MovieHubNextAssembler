@@ -1,17 +1,17 @@
-export interface Movies {
-  adult: boolean;
-  backdrop_path: string;
-  id: number;
+export interface Movie {
+  id: string;
   title: string;
-  original_language: string;
-  original_title: string;
-  overview: string;
-  poster_path: string;
-  media_type: string;
-  genre_ids: number[];
-  popularity: number;
-  release_date: string;
-  video: boolean;
-  vote_average: number;
-  vote_count: number;
+  year: number | Blob;
+  score: number | Blob;
+  sinopsis: string;
+  poster_image: string;
+  updatedAt: string;
+  moviesId: string;
+  genres: Genre[] | Blob;
 }
+
+export type Genre = {
+  id: string;
+  name: string;
+  children: React.ReactNode;
+};
